@@ -4,24 +4,7 @@ so the results are identical if the package builds reproducibly.
 
 See https://reproducible-builds.org/ for motivation and more details
 and https://docs.fedoraproject.org/en-US/reproducible-builds/ for the use in Fedora.
-
-🚧🚧🚧 WARNING: WIP 🚧🚧🚧
-
-Usage:
-```
-$ fedora-repro-build.py NEVR
-```
-
-This will establish a koji session,
-download information about the build,
-get the output package list,
-pick a subpackage with a matching architecture or "noarch",
-download the list of packages in the build of the subpackage,
-download those packages,
-create a "repository" using `createrepo_c`,
-create a mock config using that repository and no other sources of packages,
-download the srpm,
-launch `mock` rebuild of the srpm,
+srpm,
 locate the output packages,
 and do a one-by-one comparison of the first package list and the mock output packages.
 
